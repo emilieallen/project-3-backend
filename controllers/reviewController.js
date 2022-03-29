@@ -1,9 +1,5 @@
 import Recipe from "../models/recipe.js"
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 725e8c86ba6ddf444b2260c3e89bf9c9949942af
 async function index(req, res, next) {
   const { id } = req.params
   try {
@@ -15,10 +11,6 @@ async function index(req, res, next) {
   }
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 725e8c86ba6ddf444b2260c3e89bf9c9949942af
 async function create(req, res, next) {
     const { body: newReview } = req
     const { id: recipeId } = req.params

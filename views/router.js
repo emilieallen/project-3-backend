@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 
 router.route('/recipes')
   .get(recipeController.index)
-  .post(auth, recipeController.create);
+  .post(recipeController.create);
 
 router.route('/recipes/:id')
   .get(recipeController.show)
