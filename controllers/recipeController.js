@@ -2,12 +2,12 @@
 import Recipe from "../models/recipe.js"
 
 
-async function index(res, next) {
+async function index(req, res, next) {
     try {
         const recipes = await Recipe.find()
         res.send(recipes)
     } catch (e) {
-        res.send({ message: "There was a problem finding your recipes." })
+        next(e)
     }
 }
 
