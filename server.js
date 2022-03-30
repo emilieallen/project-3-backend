@@ -1,4 +1,4 @@
-import { PORT } from "./config/environment.js"
+
 import router from "./views/router.js"
 import express from "express"
 import { connectToDb } from "./db/helpers.js"
@@ -24,7 +24,7 @@ async function startServer() {
 
     // ? Tell express about our router
     app.use(logger)
-
+    
     app.use(router)
 
     app.use(errorHandler)
@@ -36,3 +36,4 @@ async function startServer() {
 }
 
 startServer()
+

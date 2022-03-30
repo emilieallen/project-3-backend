@@ -1,12 +1,12 @@
-import User from "../models/user.js"
+import User from '../models/user.js'
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 
-async function index(req, res) {
+async function index(req, res, next) {
     try {
         const users = await User.find()
         res.send(users)
-    } catch (e) {
+    } catch (err) {
         next(err)
     }
 }
@@ -44,7 +44,6 @@ async function remove(req, res, next) {
 async function login(req, res, next) {
     try {
         const user = await User.findOne({ eMail: req.body.eMail })
-        // console.log(user)
         if (!user) {
             return res.status(400).json({ message: "Invalid Credentials." })
         }

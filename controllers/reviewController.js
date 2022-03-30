@@ -1,4 +1,4 @@
-import Recipe from "../models/recipe.js"
+import Recipe from '../models/recipe.js'
 
 async function index(req, res, next) {
   const { id } = req.params
@@ -90,5 +90,4 @@ async function update(req, res, next) {
     create,
     update,
     remove,
-    index
   }
