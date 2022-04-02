@@ -5,11 +5,12 @@ import Recipe from "../models/recipe.js"
 async function index(req, res, next) {
     try {
         const recipes = await Recipe.find()
-        res.send(recipes)
+        return res.send(recipes)
     } catch (e) {
         next(e)
     }
 }
+
 
 async function show(req, res, next) {
     try {
